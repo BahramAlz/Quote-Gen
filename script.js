@@ -5,9 +5,9 @@ let btn = document.getElementById("btn");
 btn.addEventListener("click", getQuote);
 
 async function getQuote() {
-    const res = await fetch("https://type.fit/api/quotes")
+    const res = await fetch("https://api.quotable.io/random")
     const data = await res.json();
 
-    quote.innerHTML = `"${data.text}"`; 
+    quote.innerHTML = `"${data.content}"`; 
     author.innerHTML = data.author;
 }
